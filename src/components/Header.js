@@ -4,6 +4,17 @@ import "../styles.css";
 
 export class Header extends React.Component {
   render() {
-    return <h1>The Mighty Quest For Epic React</h1>;
+    return (
+      <div className="pageHeader">
+        <h1 className="pageLogo">IPT-Gram</h1>
+        <div className="searchBarDiv">
+          <input className="searchBar" type="text" placeholder="Search" />
+          <button className="btn-search" type="button">
+            🔎
+          </button>
+        </div>
+      </div>
+    );
   }
 }
+//react.CreateElemente(div, classname="pageheader", null)

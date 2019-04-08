@@ -1,4 +1,16 @@
-.App {
+.pageHeader {
+  background-color: #009900;
+  height: 50px;
+}
+.pageLogo {
   font-family: sans-serif;
-  text-align: center;
+  text-align: left;
+  color: white;
+  float: left;
+  font-size: 20px;
+  margin: 15px;
+}
+.searchBarDiv {
+  float: right;
+  margin: 13px;
 }
