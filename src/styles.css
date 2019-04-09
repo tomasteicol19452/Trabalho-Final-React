@@ -1,5 +1,8 @@
+.app {
+  margin: -10px;
+}
 .pageHeader {
-  background-color: #009900;
+  background-color: #880000;
   height: 50px;
 }
 .pageLogo {
@@ -13,4 +16,27 @@
 .searchBarDiv {
   float: right;
   margin: 13px;
+}
+
+.pageFooter {
+  background-color: #9c9c9c;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  font-family: verdana;
+  font-size: 15px;
+  text-align: center;
+}
+
+.mainPage {
+  margin: 20px;
+}
+img {
+  height: 300px;
+  width: 300px;
+}
+
+.nComentarios {
+  text-align: right;
 }

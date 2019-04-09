@@ -10,7 +10,7 @@ import { Footer } from "./Footer.js";
 export class App extends React.Component {
   render() {
     return (
-      <div class="App">
+      <div class="App" className="app">
         <Header />
         <Main />
         <Footer />

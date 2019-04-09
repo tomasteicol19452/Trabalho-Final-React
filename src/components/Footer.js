@@ -4,6 +4,10 @@ import "../styles.css";
 
 export class Footer extends React.Component {
   render() {
-    return <p>The weather huh.</p>;
+    return (
+      <div className="pageFooter">
+        <p className="autor">Tomás Colaço e Hugo Marques</p>
+      </div>
+    );
   }
 }
