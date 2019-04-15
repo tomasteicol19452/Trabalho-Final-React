@@ -1,10 +1,13 @@
 .app {
-  margin: -10px;
   height: 100%;
+  margin: -8px;
 }
+
+/* "NAVBAR" */
 .pageHeader {
   background-color: #880000;
   height: 50px;
+  width: 100%;
 }
 .pageLogo {
   font-family: sans-serif;
@@ -19,18 +22,7 @@
   margin: 13px;
 }
 
-.pageFooter {
-  background-color: #9c9c9c;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  height: 30px;
-  width: 100%;
-  font-family: verdana;
-  font-size: 15px;
-  text-align: center;
-  border: 3px solid #73ad21;
-}
+/* PÁGINA DE POSTS */
 .mainPage {
   margin: 20px;
 }
@@ -44,6 +36,28 @@ img {
 }
 
 .post {
-  float: left;
   padding: 10px;
+  float: left;
+}
+
+/* FOOTER */
+.pageFooter {
+  background-color: #9c9c9c;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  font-family: verdana;
+  font-size: 10px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0px 5px 0px 5px;
+}
+.alunoInfo {
+  width: 100%;
+}
+.aluno {
+  height: 30px;
+  width: 30px;
 }

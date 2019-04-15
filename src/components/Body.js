@@ -11,7 +11,7 @@ export class Body extends React.Component {
           author="Pizza"
           imgUrl="https://recipes.timesofindia.com/photo/53110049.cms"
           date="04/08/2019"
-          nLikes="30"
+          nLikes="500"
           nComentarios="1"
         />
         <Post
@@ -22,7 +22,7 @@ export class Body extends React.Component {
           nComentarios="3"
         />
         <Post
-          author="Salad"
+          author="Salada"
           imgUrl="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps6498_MRR133247D07_30_5b_WEB-2.jpg"
           date="01/08/2019"
           nLikes="0"

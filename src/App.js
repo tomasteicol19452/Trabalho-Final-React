@@ -13,7 +13,7 @@ export class App extends React.Component {
       <div class="App" className="app">
         <Header />
         <Body />
-        {/*<Footer /> COLOCAR ISTO QUANDO FUNCIONAR COMO DEVE DE SER!!!*/}
+        <Footer />
       </div>
     );
   }
