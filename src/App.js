@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "../styles.css";
+import "./styles.css";
 //=== React Components ===
-import { Header } from "./Header.js";
-import { Main } from "./Main.js";
-import { Footer } from "./Footer.js";
+import { Header } from "./components/Header.js";
+import { Body } from "./components/Body.js";
+import { Footer } from "./components/Footer.js";
 //========================
 
 export class App extends React.Component {
@@ -12,8 +12,8 @@ export class App extends React.Component {
     return (
       <div class="App" className="app">
         <Header />
-        <Main />
-        <Footer />
+        <Body />
+        {/*<Footer /> COLOCAR ISTO QUANDO FUNCIONAR COMO DEVE DE SER!!!*/}
       </div>
     );
   }

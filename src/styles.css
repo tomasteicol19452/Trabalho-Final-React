@@ -1,5 +1,6 @@
 .app {
   margin: -10px;
+  height: 100%;
 }
 .pageHeader {
   background-color: #880000;
@@ -20,15 +21,16 @@
 
 .pageFooter {
   background-color: #9c9c9c;
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   left: 0px;
+  height: 30px;
   width: 100%;
   font-family: verdana;
   font-size: 15px;
   text-align: center;
+  border: 3px solid #73ad21;
 }
-
 .mainPage {
   margin: 20px;
 }
@@ -39,4 +41,9 @@ img {
 
 .nComentarios {
   text-align: right;
+}
+
+.post {
+  float: left;
+  padding: 10px;
 }
