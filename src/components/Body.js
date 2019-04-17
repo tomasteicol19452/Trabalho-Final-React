@@ -12,6 +12,7 @@ export class Body extends React.Component {
   }
 
   render() {
+    console.log(postData[1]);
     if (this.state.filter == "") {
       return <div className="mainPage">{postPosts()}</div>;
     } else {
@@ -38,18 +39,21 @@ function postPosts() {
 
 //função que vai buscar apenas aqueles selecionados
 function postAuthor(filter) {
-  const postAuthorComponent = postData.map(post => {
-    if (post.author === filter) {
-      <Post
-        key={post.id}
-        author={post.author}
-        imgUrl={post.imgUrl}
-        date={post.date}
-        nLikes={post.nLikes}
-        nComentarios={post.comentarios.length}
-      />;
+  const postAuthorComponent = [];
+  for (let i = 0; i < postData.length; i++) {
+    if (postData[i].author == filter) {
+      postAuthorComponent.push(
+        <Post
+          key={postData[i].id}
+          author={postData[i].author}
+          imgUrl={postData[i].imgUrl}
+          date={postData[i].date}
+          nLikes={postData[i].nLikes}
+          nComentarios={postData[i].comentarios.length}
+        />
+      );
     }
-  });
+  }
   return postAuthorComponent;
 }
 
