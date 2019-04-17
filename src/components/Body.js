@@ -12,7 +12,7 @@ export class Body extends React.Component {
   }
 
   render() {
-    console.log(postData[1]);
+    console.log("Body");
     if (this.state.filter == "") {
       return <div className="mainPage">{postPosts()}</div>;
     } else {
@@ -56,7 +56,6 @@ function postAuthor(filter) {
   }
   return postAuthorComponent;
 }
-
 /*===EXEMPLO PREVIO===
         <Post
           author="Pizza"

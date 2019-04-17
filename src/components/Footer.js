@@ -5,6 +5,7 @@ import { Aluno } from "./Aluno.js";
 
 export class Footer extends React.Component {
   render() {
+    console.log("Footer");
     return (
       <div className="pageFooter">
         <Aluno

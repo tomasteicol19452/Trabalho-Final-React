@@ -8,6 +8,7 @@ export class Post extends React.Component {
     this.state = {};
   }
   render() {
+    console.log("Post");
     return (
       <div className="post">
         <table>
