@@ -7,16 +7,15 @@ import postData from "./PostData.js";
 export class Body extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = { filter: "" };
   }
 
   render() {
     console.log("Body");
-    if (this.state.filter == "") {
+    //getFilter(this.props.searched);
+    if (this.props.filter == "") {
       return <div className="mainPage">{postPosts()}</div>;
     } else {
-      return <div className="mainPage">{postAuthor(this.state.filter)}</div>;
+      return <div className="mainPage">{postAuthor(this.props.filter)}</div>;
     }
   }
 }
@@ -55,6 +54,11 @@ function postAuthor(filter) {
     }
   }
   return postAuthorComponent;
+}
+
+//vai buscar o filtro defenido na search bar
+function getFilter() {
+  this.setState({ filter: this.props.searched });
 }
 /*===EXEMPLO PREVIO===
         <Post

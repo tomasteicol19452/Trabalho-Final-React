@@ -10,16 +10,21 @@ import { Footer } from "./components/Footer.js";
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.searched = this.searched;
+    this.state = { filter: "" };
+    this.search = this.search.bind(this); //função que é passada como prop para actualizar o estado do compoente pai
   }
   render() {
     console.log("App");
     return (
       <div class="App" className="app">
-        <Header searched={this.searched} />
-        <Body />
+        <Header filter={this.search} />
+        <Body filter={this.state.filter} />
         <Footer />
       </div>
     );
+  }
+  search() {
+    let searchTxt = document.getElementById("searchBar").value;
+    this.setState({ filter: searchTxt });
   }
 }
