@@ -61,3 +61,23 @@ img {
   height: 30px;
   width: 30px;
 }
+
+/*Deailed box of the post*/
+.detailBox {
+  width: 630px;
+  height: 630px;
+  outline: solid black 2px;
+  position: fixed;
+  top: 10%;
+  left: 30%;
+}
+.desc {
+  overflow: auto;
+  height: 300px;
+}
+
+.comments {
+  overflow: auto;
+  height: 100px;
+  width: 300px;
+}

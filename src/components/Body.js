@@ -3,18 +3,27 @@ import ReactDOM from "react-dom";
 import "../styles.css";
 import { Post } from "./Post.js";
 import postData from "./PostData.js";
+import { DetailedPost } from "./DetailedPost.js";
 
 export class Body extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      allPosts: true,
+      idPost: null
+    };
+    this.showPost = this.showPost.bind(this);
+
+    this.showPosts = this.showPosts.bind(this);
   }
 
   render() {
     console.log("Body");
     //getFilter(this.props.searched);
-    if (this.props.filter == "") {
-      return <div className="mainPage">{postPosts()}</div>;
-    } else {
+    if (this.props.filter == "" && this.state.allPosts) {
+      return <DetailedPost img="" />; //<div className="mainPage">{postPosts()}</div>;
+    } else if (this.state.allPosts) {
       return <div className="mainPage">{postAuthor(this.props.filter)}</div>;
     }
   }
@@ -56,29 +65,16 @@ function postAuthor(filter) {
   return postAuthorComponent;
 }
 
-//vai buscar o filtro defenido na search bar
-function getFilter() {
-  this.setState({ filter: this.props.searched });
+function showPost(id) {
+  this.setState({
+    allPosts: false,
+    idPost: id
+  });
 }
-/*===EXEMPLO PREVIO===
-        <Post
-          author="Pizza"
-          imgUrl="https://recipes.timesofindia.com/photo/53110049.cms"
-          date="04/08/2019"
-          nLikes="500"
-          nComentarios="1"
-        />
-        <Post
-          author="Hamburger"
-          imgUrl="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg"
-          date="19/08/2019"
-          nLikes="20"
-          nComentarios="3"
-        />
-        <Post
-          author="Salada"
-          imgUrl="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps6498_MRR133247D07_30_5b_WEB-2.jpg"
-          date="01/08/2019"
-          nLikes="0"
-          nComentarios="0"
-        />*/
+
+function showPosts() {
+  this.setState({
+    allPosts: true,
+    idPost: null
+  });
+}

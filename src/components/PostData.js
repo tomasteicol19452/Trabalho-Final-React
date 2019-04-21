@@ -5,8 +5,12 @@ const postData = [
     imgUrl: "https://recipes.timesofindia.com/photo/53110049.cms",
     date: "04/08/2019",
     nLikes: 390,
-    comentarios: ["Deliciosa!", "Gostei Imenso.", "Por mim levava ananás..."],
-    description: ""
+    comentarios: [
+      ["Vitor", "05/08/2019", "Deliciosa!"],
+      ["Hugo", "06/08/2019", "Gostei Imenso."],
+      ["Ana", "10/09/2019", "Por mim levava ananás..."]
+    ],
+    description: "Deliciosa Pizza, feita por alguém na internet."
   },
   {
     id: 2,
