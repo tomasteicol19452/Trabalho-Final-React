@@ -25,7 +25,9 @@ export class Body extends React.Component {
         <div className="mainPage">{this.postAuthor(this.props.filter)}</div>
       );
     } else {
-      return <DetailedPost return={() => this.showPosts()} />;
+      return (
+        <div className="mainPage">{this.postDetail(this.state.idPost)}</div>
+      );
     }
   }
 
@@ -81,5 +83,29 @@ export class Body extends React.Component {
       }
     }
     return postAuthorComponent;
+  };
+
+  //função que cria uma view para cada um dos posts depois de clickada
+  postDetail = id => {
+    const postDetailedPost = [];
+    for (let i = 0; i < postData.length; i++) {
+      if (postData[i].id == id) {
+        postDetailedPost.push(
+          <DetailedPost
+            return={() => this.showPosts()}
+            key={postData[i].id}
+            postId={postData[i].id}
+            author={postData[i].author}
+            imgUrl={postData[i].imgUrl}
+            date={postData[i].date}
+            nLikes={postData[i].nLikes}
+            nComentarios={postData[i].comentarios.length}
+            comentarios={postData[i].comentarios}
+            descricao={postData[i].description}
+          />
+        );
+      }
+    }
+    return postDetailedPost;
   };
 }

@@ -11,25 +11,20 @@ export class DetailedPost extends React.Component {
             <td rowspan="2" colspan="2">
               <img
                 onClick={() => this.props.return()}
-                src="https://recipes.timesofindia.com/photo/53110049.cms"
+                src={this.props.imgUrl}
               />
             </td>
             <td>
-              <h3>Autor:{this.props.autor}</h3>
+              <h3>Autor:{this.props.author}</h3>
             </td>
             <td>
-              <h3>Data</h3>
+              <h3>{this.props.date}</h3>
             </td>
           </tr>
           <tr colspan="2">
             <td>
               <div id="descricaoPost" className="desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                mattis mauris eget finibus laoreet. In ultrices tortor at massa
-                venenatis, in vehicula sem commodo. Etiam dapibus vestibulum sem
-                at mattis. Vestibulum semper nec libero vitae tempus. Nulla id
-                hendrerit leo. Fusce vel est risus. Vestibulum laoreet arcu
-                nisl, euismod ullamcorper ante cursus a.{this.props.descricao}
+                {this.props.descricao}
               </div>
             </td>
           </tr>
@@ -38,7 +33,7 @@ export class DetailedPost extends React.Component {
               <h4>{this.props.nComentarios} Comentarios</h4>
             </td>
             <td>
-              <h4>{this.props.likes} Likes</h4>
+              <h4>{this.props.nLikes} Likes</h4>
             </td>
           </tr>
           <tr>
