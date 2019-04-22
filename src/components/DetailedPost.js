@@ -9,7 +9,10 @@ export class DetailedPost extends React.Component {
         <table>
           <tr>
             <td rowspan="2" colspan="2">
-              <img src="https://recipes.timesofindia.com/photo/53110049.cms" />
+              <img
+                onClick={() => this.props.return()}
+                src="https://recipes.timesofindia.com/photo/53110049.cms"
+              />
             </td>
             <td>
               <h3>Autor:{this.props.autor}</h3>

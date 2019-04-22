@@ -73,11 +73,13 @@ img {
 }
 .desc {
   overflow: auto;
+  overflow-x: hidden;
   height: 300px;
 }
 
 .comments {
   overflow: auto;
+  overflow-x: hidden;
   height: 100px;
   width: 300px;
 }

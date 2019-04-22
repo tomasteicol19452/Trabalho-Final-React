@@ -8,7 +8,6 @@ export class Post extends React.Component {
     this.state = {};
   }
   render() {
-    console.log("Post");
     return (
       <div className="post">
         <table>
@@ -19,7 +18,10 @@ export class Post extends React.Component {
           </tr>
           <tr>
             <td colSpan="2">
-              <img src={this.props.imgUrl} />
+              <img
+                src={this.props.imgUrl}
+                onClick={() => this.props.show(this.props.postId)}
+              />
             </td>
           </tr>
           <tr>
