@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Comentario } from "./Comentario.js";
+import postData from "./PostData";
 
 export class DetailedPost extends React.Component {
   render() {
@@ -15,7 +16,7 @@ export class DetailedPost extends React.Component {
               />
             </td>
             <td>
-              <h3>Autor:{this.props.author}</h3>
+              <h3>Autor: {this.props.author}</h3>
             </td>
             <td>
               <h3>{this.props.date}</h3>
@@ -39,16 +40,7 @@ export class DetailedPost extends React.Component {
           <tr>
             <td colspan="2">
               <div className="comments">
-                <Comentario
-                  author="João"
-                  coment="Isto é um teste!"
-                  date="10/08/2019"
-                />
-                <Comentario
-                  author="João"
-                  coment="Isto é um teste!"
-                  date="10/08/2019"
-                />
+                {this.showComentarios(this.props.postId)}
               </div>
             </td>
           </tr>
@@ -56,4 +48,22 @@ export class DetailedPost extends React.Component {
       </div>
     );
   }
+  //função que pelo id do item do postdata devolve a lista de comentarios
+  showComentarios = id => {
+    const postComment = [];
+    for (let i = 0; i < postData.length; i++) {
+      if (postData[i].id == id) {
+        for (let j = 0; j < postData[i].comentarios.length; j++) {
+          postComment.push(
+            <Comentario
+              author={postData[i].comentarios[j][0]}
+              date={postData[i].comentarios[j][1]}
+              coment={postData[i].comentarios[j][2]}
+            />
+          );
+        }
+      }
+    }
+    return postComment;
+  };
 }
