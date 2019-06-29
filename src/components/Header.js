@@ -10,7 +10,9 @@ export class Header extends React.Component {
     console.log("Header");
     return (
       <div className="pageHeader">
-        <h1 className="pageLogo">IPT-Gram</h1>
+        <h1 onClick={this.props.home} className="pageLogo">
+          IPT-Gram
+        </h1>
         <div className="searchBarDiv">
           <input
             className="searchBar"

@@ -18,7 +18,7 @@ export class Body extends React.Component {
   render() {
     console.log("Body");
     console.log(this.state);
-    if (this.props.filter == "" && this.state.allPosts) {
+    if (this.props.filter === "" && this.state.allPosts) {
       return <div className="mainPage">{this.postPosts()}</div>;
     } else if (this.state.allPosts) {
       return (
@@ -67,7 +67,7 @@ export class Body extends React.Component {
   postAuthor = filter => {
     const postAuthorComponent = [];
     for (let i = 0; i < postData.length; i++) {
-      if (postData[i].author == filter) {
+      if (postData[i].author === filter) {
         postAuthorComponent.push(
           <Post
             key={postData[i].id}
@@ -89,7 +89,7 @@ export class Body extends React.Component {
   postDetail = id => {
     const postDetailedPost = [];
     for (let i = 0; i < postData.length; i++) {
-      if (postData[i].id == id) {
+      if (postData[i].id === id) {
         postDetailedPost.push(
           <DetailedPost
             return={() => this.showPosts()}
