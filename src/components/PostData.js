@@ -236,3 +236,9 @@ const postData = [
 ];
 
 export default postData;
+
+export const getPosts = async () => {
+  const response = await fetch("localhost:8080/posts");
+  console.log(response);
+  return response;
+};

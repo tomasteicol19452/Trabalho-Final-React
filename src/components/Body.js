@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../styles.css";
 import { Post } from "./Post.js";
-import postData from "./PostData.js";
+import postData, { getPosts } from "./PostData.js";
 import { DetailedPost } from "./DetailedPost.js";
 
 export class Body extends React.Component {
@@ -18,6 +18,7 @@ export class Body extends React.Component {
   render() {
     console.log("Body");
     console.log(this.state);
+    getPosts();
     if (this.props.filter === "" && this.state.allPosts) {
       return <div className="mainPage">{this.postPosts()}</div>;
     } else if (this.state.allPosts) {
