@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../styles.css";
 import { Post } from "./Post.js";
-import postData, { getPosts } from "./PostData.js";
+import { getPosts } from "./PostData.js";
 import { DetailedPost } from "./DetailedPost.js";
 
 export class Body extends React.Component {
@@ -11,23 +11,39 @@ export class Body extends React.Component {
 
     this.state = {
       allPosts: true,
-      idPost: 0
+      idPost: 0,
+      data: []
     };
+  }
+
+  async componentDidMount() {
+    //fetch asyncrono pois retorna promise // retorna os dados da api para um objecto alojado no state
+    if (this.state.allPosts && this.props.filter === "") {
+      const response = await getPosts();
+      if (response === []) {
+        alert("Error 404: Posts not found.");
+      }
+      this.setState({ data: response });
+    }
   }
 
   render() {
     console.log("Body");
     console.log(this.state);
-    getPosts();
+
     if (this.props.filter === "" && this.state.allPosts) {
-      return <div className="mainPage">{this.postPosts()}</div>;
+      return <div className="mainPage">{this.postPosts(this.state.data)}</div>;
     } else if (this.state.allPosts) {
       return (
-        <div className="mainPage">{this.postAuthor(this.props.filter)}</div>
+        <div className="mainPage">
+          {this.postAuthor(this.props.filter, this.state.data)}
+        </div>
       );
     } else {
       return (
-        <div className="mainPage">{this.postDetail(this.state.idPost)}</div>
+        <div className="mainPage">
+          {this.postDetail(this.state.idPost, this.state.data)}
+        </div>
       );
     }
   }
@@ -48,8 +64,8 @@ export class Body extends React.Component {
 
   //função para ir buscar os valores ao ficheiro JSON
   //cria um novo array de objectos <Post/>
-  postPosts = () => {
-    const postComponent = postData.map(post => (
+  postPosts = data => {
+    const postComponent = data.map(post => (
       <Post
         key={post.id}
         postId={post.id}
@@ -64,8 +80,8 @@ export class Body extends React.Component {
     return postComponent;
   };
 
-  //função que vai buscar apenas aqueles selecionados
-  postAuthor = filter => {
+  // função que vai buscar apenas aqueles selecionados
+  postAuthor = (filter, postData) => {
     const postAuthorComponent = [];
     for (let i = 0; i < postData.length; i++) {
       if (postData[i].author === filter) {
@@ -86,8 +102,8 @@ export class Body extends React.Component {
     return postAuthorComponent;
   };
 
-  //função que cria uma view para cada um dos posts depois de clickada
-  postDetail = id => {
+  // função que cria uma view para cada um dos posts depois de clickada
+  postDetail = (id, postData) => {
     const postDetailedPost = [];
     for (let i = 0; i < postData.length; i++) {
       if (postData[i].id === id) {
