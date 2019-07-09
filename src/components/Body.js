@@ -84,7 +84,7 @@ export class Body extends React.Component {
   postAuthor = (filter, postData) => {
     const postAuthorComponent = [];
     for (let i = 0; i < postData.length; i++) {
-      if (postData[i].author === filter) {
+      if (postData[i].author.toLowerCase() === filter.toLowerCase()) {
         postAuthorComponent.push(
           <Post
             key={postData[i].id}
