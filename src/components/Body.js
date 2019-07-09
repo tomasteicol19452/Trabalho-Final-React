@@ -16,8 +16,9 @@ export class Body extends React.Component {
     };
   }
 
+  //retorna os dados da api para um objecto alojado no state 'data'
   async componentDidMount() {
-    //fetch asyncrono pois retorna promise // retorna os dados da api para um objecto alojado no state
+    //fetch asyncrono pois retorna promise 
     if (this.state.allPosts && this.props.filter === "") {
       const response = await getPosts();
       if (response === []) {
@@ -28,18 +29,20 @@ export class Body extends React.Component {
   }
 
   render() {
-    console.log("Body");
-    console.log(this.state);
-
+    //Se a pesquisa estiver vazia colocar todos os posts
     if (this.props.filter === "" && this.state.allPosts) {
-      return <div className="mainPage">{this.postPosts(this.state.data)}</div>;
-    } else if (this.state.allPosts) {
+      return <div className="mainPage">{this.postPosts(this.state.data)}</div>
+    }
+    //Se a tiver sido feito uma pesquisa apresenta apenas os postos cujo o autor corresponde a pesquisa 
+    else if (this.state.allPosts) {
       return (
         <div className="mainPage">
           {this.postAuthor(this.props.filter, this.state.data)}
         </div>
       );
-    } else {
+    }
+    //Se tiver sido selecionada uma das imagens 
+    else {
       return (
         <div className="mainPage">
           {this.postDetail(this.state.idPost, this.state.data)}
@@ -48,6 +51,7 @@ export class Body extends React.Component {
     }
   }
 
+  //Função que altera o state para identificar o post selecionado
   showPost = id => {
     this.setState({
       allPosts: false,
@@ -55,6 +59,7 @@ export class Body extends React.Component {
     });
   };
 
+  //Função que altera os states para demonstrar todos os posts disponives
   showPosts = () => {
     this.setState({
       allPosts: true,
@@ -80,7 +85,7 @@ export class Body extends React.Component {
     return postComponent;
   };
 
-  // função que vai buscar apenas aqueles selecionados
+  // função que vai buscar apenas aqueles selecionados pelo filtro da pesquisa
   postAuthor = (filter, postData) => {
     const postAuthorComponent = [];
     for (let i = 0; i < postData.length; i++) {
@@ -102,7 +107,7 @@ export class Body extends React.Component {
     return postAuthorComponent;
   };
 
-  // função que cria uma view para cada um dos posts depois de clickada
+  // função que cria uma view para cada um dos posts depois de feito o click na imagem
   postDetail = (id, postData) => {
     const postDetailedPost = [];
     for (let i = 0; i < postData.length; i++) {

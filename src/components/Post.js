@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+//Componente que Cria a primeira view de cada post
 export class Post extends React.Component {
   constructor(props) {
     super(props);
@@ -10,36 +11,29 @@ export class Post extends React.Component {
   render() {
     return (
       <div className="post">
-        <table>
-          <tr>
-            <td colSpan="2">
-              <h3>{this.props.author}</h3>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <img
-                src={this.props.imgUrl}
-                onClick={() => this.props.show(this.props.postId)}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <p>{this.props.date}</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>{this.props.nLikes} Likes</p>
-            </td>
-            <td>
-              <p className="nComentarios">
-                {this.props.nComentarios} Comentários
-              </p>
-            </td>
-          </tr>
-        </table>
+        <h2 class="autor">{this.props.author}</h2>
+
+        <img
+          src={this.props.imgUrl}
+          onClick={() => this.props.show(this.props.postId)}
+        />
+
+        <p className="date">{this.props.date}</p>
+
+        <div class="likesComments">
+          <p className="likes">{this.props.nLikes} ❤️</p>
+
+          <p
+            onClick={() => this.props.show(this.props.postId)}
+            className="nComentarios"
+          >
+            {this.props.nComentarios} 💬
+          </p>
+        </div>
+
+        <div className="colorBot">
+          <h1> </h1>
+        </div>
       </div>
     );
   }

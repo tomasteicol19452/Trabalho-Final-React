@@ -16,7 +16,6 @@ export class App extends React.Component {
   }
 
   render() {
-    console.log("App");
     return (
       <div className="app">
         <Header filter={this.search} home={this.home} />
@@ -25,11 +24,14 @@ export class App extends React.Component {
       </div>
     );
   }
+
+  //Função que retorna o valor da procura na caixa de texto e altera o state para filtrar os posts utilizados
   search() {
     let searchTxt = document.getElementById("searchBar").value;
     this.setState({ filter: searchTxt });
   }
 
+  //Funação que "limpa" o filtro para fazer o display de todos os posts
   home() {
     this.setState({ filter: "" });
   }

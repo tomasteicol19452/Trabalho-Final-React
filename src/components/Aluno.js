@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../styles.css";
 
+//componente onde se vão colocar os aluno que participara no trabalho
 export class Aluno extends React.Component {
   render() {
     return (

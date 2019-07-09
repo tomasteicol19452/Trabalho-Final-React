@@ -1,6 +1,6 @@
 .app {
-  height: 100%;
-  margin: -8px;
+  margin: -10px;
+  margin-bottom: -25px;
 }
 
 /* "NAVBAR" */
@@ -8,6 +8,9 @@
   background-color: #880000;
   height: 50px;
   width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
 .pageLogo {
   font-family: sans-serif;
@@ -24,20 +27,128 @@
 
 /* PÁGINA DE POSTS */
 .mainPage {
-  margin: 20px;
-}
-img {
-  height: 300px;
-  width: 300px;
-}
-
-.nComentarios {
-  text-align: right;
+  margin: 60px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
 }
 
 .post {
-  padding: 10px;
-  float: left;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: rgb(225, 225, 225);
+}
+
+.colorBot {
+  background-color: #fff;
+}
+
+.autor {
+  font-family: Helvetica, sans-serif;
+}
+
+img {
+  height: 450px;
+  width: 450px;
+}
+
+.date {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.likes {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.nComentarios {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.likesComments {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Deailed box of the post*/
+.detailBox {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+
+  width: 665px;
+  height: 450px;
+  position: fixed;
+  top: 10%;
+  left: 30%;
+}
+
+.imgDetails {
+  height: 450px;
+  width: 450px;
+  padding: 5px;
+  padding-right: 10px;
+  background-color: rgb(225, 225, 225);
+}
+
+.detailBoxTop {
+  width: 190px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgb(225, 225, 225);
+}
+
+.autorDesc {
+  font-family: Helvetica, sans-serif;
+  flex-wrap: wrap;
+  width: 200px;
+}
+
+.dateDesc {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  flex-wrap: wrap;
+  width: 200px;
+}
+
+.desc {
+  font-family: Helvetica, sans-serif;
+  flex-wrap: wrap;
+  width: 200px;
+}
+
+.detailBoxBot {
+  flex-wrap: wrap;
+  background-color: rgb(225, 225, 225);
+}
+
+.likesLogo {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+.comentariosLogo {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+.comments {
+  font-family: Helvetica, sans-serif;
+  background-color: rgb(210, 210, 210);
+  flex-wrap: wrap;
+
+  overflow: auto;
+  overflow-x: hidden;
+  height: 150px;
+  width: 655px;
 }
 
 /* FOOTER */
@@ -62,24 +173,3 @@ img {
   width: 30px;
 }
 
-/*Deailed box of the post*/
-.detailBox {
-  width: 630px;
-  height: 630px;
-  outline: solid black 2px;
-  position: fixed;
-  top: 10%;
-  left: 30%;
-}
-.desc {
-  overflow: auto;
-  overflow-x: hidden;
-  height: 300px;
-}
-
-.comments {
-  overflow: auto;
-  overflow-x: hidden;
-  height: 100px;
-  width: 300px;
-}

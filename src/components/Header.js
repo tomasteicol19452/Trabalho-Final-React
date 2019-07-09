@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../styles.css";
 
+//Componente que cria o header da página
 export class Header extends React.Component {
   constructor(props) {
     super(props);

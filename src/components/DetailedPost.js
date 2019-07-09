@@ -6,48 +6,44 @@ export class DetailedPost extends React.Component {
   render() {
     return (
       <div className="detailBox">
-        <table>
-          <tr>
-            <td rowspan="2" colspan="2">
-              <img
-                onClick={() => this.props.return()}
-                src={this.props.imgUrl}
-              />
-            </td>
-            <td>
-              <h3>Autor: {this.props.author}</h3>
-            </td>
-            <td>
-              <h3>{this.props.date}</h3>
-            </td>
-          </tr>
-          <tr colspan="2">
-            <td>
-              <div id="descricaoPost" className="desc">
-                {this.props.descricao}
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h4>{this.props.nComentarios} Comentarios</h4>
-            </td>
-            <td>
-              <h4>{this.props.nLikes} Likes</h4>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <div className="comments">
-                {this.showComentarios(this.props.comentarios)}
-              </div>
-            </td>
-          </tr>
-        </table>
+        <img
+          className="imgDetails"
+          onClick={() => this.props.return()}
+          src={this.props.imgUrl}
+        />
+
+        <div className="detailBoxTop">
+          <div className="autorDesc">
+            <h3>{this.props.author}</h3>
+          </div>
+
+          <div className="dateDesc">
+            <h3>{this.props.date}</h3>
+          </div>
+
+          <div id="descricaoPost" className="desc">
+            {this.props.descricao}
+          </div>
+        </div>
+
+        <div className="detailBoxBot">
+          <div className="likesLogo">
+            <h4>{this.props.nLikes} ❤️ </h4>
+          </div>
+
+          <div className="comentariosLogo">
+            <h4>{this.props.nComentarios} 💬</h4>
+          </div>
+
+          <div className="comments">
+            {this.showComentarios(this.props.comentarios)}
+          </div>
+        </div>
       </div>
     );
   }
-  //função que pelo id do item do postdata devolve a lista de comentarios
+
+  //função que retorna os mentarios do postdata do postdata devolve a lista de comentarios
   showComentarios = comentarios => {
     const postComment = [];
    

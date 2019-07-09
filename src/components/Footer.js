@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import "../styles.css";
 import { Aluno } from "./Aluno.js";
 
+//Componente que cria o footer da página
 export class Footer extends React.Component {
   render() {
-    console.log("Footer");
     return (
       <div className="pageFooter">
         <Aluno
